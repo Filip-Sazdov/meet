@@ -6,7 +6,6 @@ test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.
 
 ## FEATURE 1: FILTER EVENTS BY CITY
-
 ### User story: As a user, I should be able to “filter events by city” so that I can see the list of events that take place in that city.
 
 Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.
