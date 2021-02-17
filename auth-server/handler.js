@@ -119,15 +119,8 @@ module.exports.getCalendarEvents = async (event) => {
 				}
 			}
 		);
-
-		oAuth2Client.getToken(access_token, (err, token) => {
-			if (err) {
-				return reject(err);
-			}
-			return resolve(token);
-		});
 	})
-		.then((token) => {
+		.then((results) => {
 			// Respond with OAuth token
 			return {
 				statusCode: 200,
@@ -142,6 +135,9 @@ module.exports.getCalendarEvents = async (event) => {
 			console.error(err);
 			return {
 				statusCode: 500,
+				headers: {
+					"Access-Control-Allow-Origin": "*",
+				},
 				body: JSON.stringify(err),
 			};
 		});
