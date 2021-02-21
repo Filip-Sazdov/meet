@@ -1,15 +1,20 @@
 import React from "react";
 import "./App.css";
+import EventList from "./EventList";
 
-function App() {
-	return <div className="App"></div>;
-}
+const App = () => {
+	return (
+		<div className="App">
+			<EventList />
+		</div>
+	);
+};
 
 // class App extends Component {
 //   render() {
 //     return (
 //       <div className="App">
-
+//         <EventList />
 //       </div>
 //     );
 //   }
