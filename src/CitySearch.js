@@ -1,16 +1,3 @@
-// import React, { useState } from "react";
-
-// const CitySearch = () => {
-// 	const [query, setQuery] = useState("");
-
-// 	return (
-// 		<div className="CitySearch">
-// 			<input type="text" className="city" value={query} />
-// 			<ul className="suggestions"></ul>
-// 		</div>
-// 	);
-// };
-
 import React, { Component } from "react";
 
 class CitySearch extends Component {
