@@ -45,10 +45,20 @@ defineFeature(feature, (test) => {
 	});
 
 	test("User can collapse an event to hide its details", ({ given, when, then }) => {
-		given("the event details view is visible", () => {});
+		given("the event details view is visible", () => {
+			AppWrapper = mount(<App />);
+			AppWrapper.update();
+			expect(AppWrapper.find(".event")).toHaveLength(mockData.length);
+			AppWrapper.find(".event .toggle-details").at(0).simulate("click");
+			expect(AppWrapper.find(".event .event-details")).toHaveLength(1);
+		});
 
-		when("the user selects an exit button/option", () => {});
+		when("the user selects an exit button/option", () => {
+			AppWrapper.find(".event .toggle-details").at(0).simulate("click");
+		});
 
-		then("the event details view should direct to the main page view", () => {});
+		then("the event details view should direct to the main page view", () => {
+			expect(AppWrapper.find(".event .event-details")).toHaveLength(0);
+		});
 	});
 });
