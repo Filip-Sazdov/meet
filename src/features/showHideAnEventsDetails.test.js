@@ -10,8 +10,6 @@ import { loadFeature, defineFeature } from "jest-cucumber";
 const feature = loadFeature("./src/features/showHideAnEventsDetails.feature");
 
 defineFeature(feature, (test) => {
-	let EventListWrapper = shallow(<EventList events={mockData} />);
-	let EventWrapper = shallow(<Event event={mockData[0]} />);
 	let AppWrapper;
 
 	test("An event element is collapsed by default", ({ given, when, then }) => {
@@ -40,20 +38,21 @@ defineFeature(feature, (test) => {
 		});
 
 		then("the event details view should be visible.", () => {
-			expect(EventWrapper.find(".event .event-details")).toHaveLength(1);
+			expect(AppWrapper.find(".event div.event-details")).toHaveLength(1);
 		});
 	});
 
 	test("User can collapse an event to hide its details", ({ given, when, then }) => {
 		given("the event details view is visible", () => {
 			AppWrapper = mount(<App />);
+		});
+
+		when("the user selects an exit button/option", () => {
 			AppWrapper.update();
 			expect(AppWrapper.find(".event")).toHaveLength(mockData.length);
 			AppWrapper.find(".event .toggle-details").at(0).simulate("click");
 			expect(AppWrapper.find(".event .event-details")).toHaveLength(1);
-		});
 
-		when("the user selects an exit button/option", () => {
 			AppWrapper.find(".event .toggle-details").at(0).simulate("click");
 		});
 
