@@ -1,0 +1,53 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug CRA Tests",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
+			"args": ["test", "__tests__", "--runInBand", "--no-cache", "--watchAll=false"],
+			"cwd": "${workspaceRoot}",
+			"protocol": "inspector",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"env": { "CI": "true" },
+			"disableOptimisticBPs": true
+		},
+		{
+			"name": "Debug npm Tests",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "npm",
+			"args": ["test", "__tests__"],
+			"cwd": "${workspaceRoot}",
+			"protocol": "inspector",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"env": { "CI": "true" },
+			"disableOptimisticBPs": true
+		},
+		{
+			"name": "Debug npm Tests",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "/root/.nvm/versions/node/v14.15.1/bin/npm",
+			"args": ["test", "__tests__"],
+			"cwd": "/mnt/c/Users/Filip/Desktop/Task\\ Submissions\\ for\\ CF/Full\\ Stack\\ Curriculum/Achievement\\ 4/meet",
+			"protocol": "inspector",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"env": { "CI": "true" },
+			"disableOptimisticBPs": true,
+			"pipeTransport": {
+				"pipeCwd": "",
+				"pipeProgram": "c:\\windows\\sysnative\\bash.exe",
+				"pipeArgs": ["-c"],
+				"debuggerPath": "/usr/bin/gdb"
+			},
+			"sourceFileMap": {
+				"/mnt/c": "c:\\"
+			}
+		}
+	]
+}

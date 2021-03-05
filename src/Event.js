@@ -6,7 +6,7 @@ class Event extends Component {
 	};
 
 	handleToggleDetails = () => {
-		return !this.setState.toggleDetails;
+		this.setState({ toggleDetails: !this.state.toggleDetails });
 	};
 
 	render() {
@@ -18,7 +18,7 @@ class Event extends Component {
 				<h3>Start Time: {event.start.dateTime}</h3>
 				<h3>Location: {event.location}</h3>
 				{this.state.toggleDetails && (
-					<div>
+					<div className="event-details">
 						<h2>About event:</h2>
 						<a href={event.htmlLink}>See Details on Google Calendar</a>
 						<p>{event.description}</p>
