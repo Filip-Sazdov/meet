@@ -55,7 +55,7 @@ input[type="text"], input[type="number"] {
 
 .suggestions {
   width: 250px;
-  position: absolute;
+  /* position: absolute; */
   z-index: 2;
   align-self: center;
   margin: 0;
@@ -138,8 +138,10 @@ input[type="text"], input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
-  top: 20px;
+  /* position: fixed;
+  top: 20px; */
+  height: auto;
+  padding-bottom: 1rem;
 }
 
 .data-vis-wrapper {
