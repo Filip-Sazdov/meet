@@ -22,7 +22,7 @@ class Event extends Component {
 				</button>
 				{this.state.toggleDetails && (
 					<div className="event-details">
-						<h2>About event:</h2>
+						{/* <h2 className=''>About event:</h2> */}
 						<a href={event.htmlLink}>See Details on Google Calendar</a>
 						<p>{event.description}</p>
 					</div>
