@@ -87,23 +87,41 @@ input[type="text"], input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   margin: 10px;
-  text-align: left;
+  text-align: center;
   border: 1px solid rgb(122, 122, 122);
   border-radius: 4px;
-  position: relative;
+  height: 400px;
 }
 
-.details-btn {
-  position: absolute;
+.event-title {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.toggle-details {
+  /* position: absolute;
   right: 5px;
   bottom: 5px;
-  padding: 5px 8px;
+  
   border-radius: 4px;
-  outline: none;
+  outline: none;*/
   cursor: pointer;
+  width: 150px;
+  padding: 5px 8px;
+  margin-bottom: 5px;
 }
+
+/* .event-details {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  z-index: 1;
+} */
 
 .name {
   font-size: 18px;
