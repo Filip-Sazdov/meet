@@ -14,9 +14,12 @@ class Event extends Component {
 		return (
 			<div className="event">
 				{/* Added clarifying text below as project brief visual seemed to need it. */}
-				<h1>{event.summary}</h1>
-				<h3>Start Time: {event.start.dateTime}</h3>
-				<h3>Location: {event.location}</h3>
+				<h1 className="event-title">{event.summary}</h1>
+				<p className="event-start">Start Time: {event.start.dateTime}</p>
+				<p className="event-location">Location: {event.location}</p>
+				<button className="toggle-details" onClick={() => this.handleToggleDetails()}>
+					{!this.state.toggleDetails ? "Show Details" : "Hide Details"}
+				</button>
 				{this.state.toggleDetails && (
 					<div className="event-details">
 						<h2>About event:</h2>
@@ -24,9 +27,6 @@ class Event extends Component {
 						<p>{event.description}</p>
 					</div>
 				)}
-				<button className="toggle-details" onClick={() => this.handleToggleDetails()}>
-					Details
-				</button>
 			</div>
 		);
 	}
