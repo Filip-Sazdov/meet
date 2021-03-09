@@ -4,6 +4,7 @@ import CitySearch from "./CitySearch";
 import EventList from "./EventList";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
+import { WarningAlert } from "./Alert";
 
 class App extends Component {
 	state = {
@@ -11,6 +12,7 @@ class App extends Component {
 		locations: [],
 		eventCount: 32,
 		location: "all",
+		warningText: "",
 	};
 
 	componentDidMount() {
@@ -38,6 +40,12 @@ class App extends Component {
 	};
 
 	updateEvents = () => {
+		if (!navigator.onLine) {
+			this.setState({
+				warningText: "It seems you are offline!!! You are currently viewing a cached version of the events!!! ",
+			});
+		}
+
 		getEvents().then((events) => {
 			const { location, eventCount } = this.state;
 			const locationEvents =
@@ -54,6 +62,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<WarningAlert text={this.state.warningText} />
+
 				<CitySearch
 					locations={this.state.locations}
 					updateEvents={this.updateEvents}
