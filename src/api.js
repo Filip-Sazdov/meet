@@ -34,6 +34,12 @@ export const getEvents = async () => {
 		return mockData;
 	}
 
+	if (!navigator.onLine) {
+		const data = localStorage.getItem("lastEvents");
+		NProgress.done();
+		return data ? JSON.parse(data).events : [];
+	}
+
 	const token = await getAccessToken();
 
 	if (token) {
@@ -44,6 +50,9 @@ export const getEvents = async () => {
 			var locations = extractLocations(result.data.events);
 			localStorage.setItem("lastEvents", JSON.stringify(result.data));
 			localStorage.setItem("locations", JSON.stringify(locations));
+			// The JSON.stringify(events) function is necessary because events is a list, but localStorage can only store strings.
+			// The JSON.stringify() function will convert the list into a string, allowing it to be stored in localStorage.
+			// It will then need to be parsed later using the JSON.parse() function when it’s loaded from localStorage. The (stringified) list is stored under the key lastEvents.
 		}
 		NProgress.done();
 		return result.data.events;
