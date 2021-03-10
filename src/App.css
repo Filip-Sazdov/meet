@@ -82,20 +82,20 @@ input[type="text"], input[type="number"] {
 
 .EventList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
 }
 
 .event {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin: 10px;
   text-align: center;
   border: 1px solid rgb(122, 122, 122);
   border-radius: 4px;
-  height: 400px;
+  height: 250px;
 }
 
 .event-title {
