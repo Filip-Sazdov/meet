@@ -44,6 +44,10 @@ class App extends Component {
 			this.setState({
 				warningText: "It seems you are offline!!! You are currently viewing a cached version of the events!!! ",
 			});
+		} else {
+			this.setState({
+				warningText: "",
+			});
 		}
 
 		getEvents().then((events) => {
