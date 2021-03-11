@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from "./Modal";
 
 class Event extends Component {
 	state = {
@@ -27,12 +28,9 @@ class Event extends Component {
 				<button className="toggle-details" onClick={() => this.handleToggleDetails()}>
 					{!this.state.toggleDetails ? "Show Details" : "Hide Details"}
 				</button>
+
 				{this.state.toggleDetails && (
-					<div className="event-details">
-						{/* <h2 className=''>About event:</h2> */}
-						<a href={event.htmlLink}>See Details on Google Calendar</a>
-						<p>{event.description}</p>
-					</div>
+					<Modal event={event} handleToggleDetails={this.handleToggleDetails} readabledateTime={readabledateTime} />
 				)}
 			</div>
 		);
