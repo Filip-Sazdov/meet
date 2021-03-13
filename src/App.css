@@ -123,7 +123,7 @@ input[type="text"], input[type="number"] {
 }
 
 .event-details {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -164,6 +164,19 @@ input[type="text"], input[type="number"] {
 
 .modal-event-description {
   width: 300px;
+}
+
+.modal-exit-button {
+  margin: 0 10px 0 auto;
+  width: 3rem;
+  text-decoration: inherit;
+  color: #0D1821;
+  font-weight: bold;
+  border: 1px solid #F0F4EF;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color: #B4CDED;
+  cursor: pointer;
 }
 
 .name {
