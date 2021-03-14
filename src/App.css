@@ -14,9 +14,14 @@ ul {
 }
 
 body {
-  background-color: #0D1B2A;
-  /* rgb(216, 213, 213); */
-  color: #778DA9;
+  background-color: #1B1D24;
+  /* #778DA9 */
+  color: rgb(216, 213, 213);
+}
+
+.main-heading {
+  text-align: left;
+  color: #0376E3;
 }
 
 p {
@@ -32,31 +37,47 @@ p {
 }
 
 input[type="text"], input[type="number"] {
-  padding: 8px 6px 8px 10px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  /* border-radius: 4px; */
   outline: none;
-  border: 1px solid rgb(122, 122, 122);
+  border: none;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
   height: 38px;
+  background-color: #1B1D24;
 }
 
 .city {
-  width: 250px;
+  width: 100%;
+  color: rgb(216, 213, 213);
 }
 
 .CitySearch {
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
-  max-width: 300px;
-  margin: auto;
+  max-width: 450px;
+  margin: 0 auto;
   position: relative;
 }
 
+.search-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #1B1D24;
+  border: 1px solid #30333A;
+  border-radius: 4px;
+}
+
+.search-icon {
+  align-self: center;
+  margin-left: 5px;
+}
+
 .suggestions {
-  width: 250px;
+  color: #1B1D24;
+  width: 100%;
   /* position: absolute; */
   z-index: 2;
   align-self: center;
@@ -82,23 +103,55 @@ input[type="text"], input[type="number"] {
   background-color: #bcdcdb;
 }
 
+.number-of-events {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.number-input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* flex-basis: 300px; */
+  max-width: 450px;
+  margin-top: 30px;
+}
+
+#input-number {
+  border: 1px solid #30333A;
+  border-radius: 4px;
+  color: rgb(216, 213, 213);
+  width: 100px;
+  margin-left: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  column-gap: 35px;
+  max-width: 80%;
+  margin: auto;
+}
+
 .EventList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
 }
 
-.event {
+.event, .modal-content-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px;
-  text-align: center;
-  border: 1px solid rgb(122, 122, 122);
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  text-align: left;
+  /* border: 1px solid rgb(122, 122, 122); */
   border-radius: 4px;
   height: 250px;
-  background-color: #0D1821;
+  background-color: #1B1D24;
+  padding-left: 20px;
+  width: 420px;
 }
 
 .event-title {
@@ -106,20 +159,32 @@ input[type="text"], input[type="number"] {
   margin-bottom: 0;
 }
 
+.event-start, .event-location, .modal-event-start, .modal-event-location {
+  font-size: smaller;
+  color: rgb(122, 122, 122);
+}
+
+.location-container, .modal-location-container {
+  display: flex;
+  flex-flow: nowrap row;
+  /* align-items: center; */
+}
+
+.event-location, .modal-event-location {
+  margin-left: 5px;
+}
+
 .toggle-details {
-  /* position: absolute;
-  right: 5px;
-  bottom: 5px;
-  
-  
-  */
-  background-color: #415A77;
+  background-color: #1E2127;
   cursor: pointer;
   width: 150px;
-  padding: 5px 8px;
+  padding: 8px 8px;
   margin-bottom: 5px;
   border-radius: 4px;
   outline: none;
+  width: 90%;
+  border: 1px solid #30333A;
+  color: #BEC2CC;
 }
 
 .event-details {
@@ -129,54 +194,45 @@ input[type="text"], input[type="number"] {
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: rgba(29, 60, 94, 0.85);
+  /* background-color: rgba(29, 60, 94, 0.85); */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal-content-container {
-  background-color: #0D1821;
   min-width: 400px;
-  max-width: 40vw;
+  width: 50vw;
   height: 50vh;
   border-radius: 4px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.modal-event-text-section {
+  width: 90%;
 }
 
 .modal-event-title {
   margin: 0;
 }
 
-.modal-event-link {
-  text-decoration: inherit;
-  color: #0D1821;
-  font-weight: bold;
-  border: 1px solid #F0F4EF;
-  border-radius: 4px;
-  padding: 10px 20px;
-  background-color: #B4CDED;
-}
-
 .modal-event-description {
-  width: 300px;
+  width: 90%;
 }
 
 .modal-exit-button {
   margin: 0 10px 0 auto;
-  width: 3rem;
-  text-decoration: inherit;
-  color: #0D1821;
-  font-weight: bold;
-  border: 1px solid #F0F4EF;
-  border-radius: 4px;
-  padding: 10px 20px;
-  background-color: #B4CDED;
+  color: #F5F5F5;
+  border-radius: 50%;
+  padding: 6px 6px;
+  background-color: #1B1D24;
   cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 .name {
@@ -218,13 +274,17 @@ input[type="text"], input[type="number"] {
   padding-bottom: 1rem;
 }
 
-.data-vis-wrapper {
+.data-vis-wrapper, .list-wrapper, .modal-content-container {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #1E2127;
+  border-radius: 4px;
+  box-shadow: -2px 2px 2px 4px rgba(0, 0, 0, .2);
+  margin-bottom: 30px;
 }
 
-.data-vis-wrapper .recharts-responsive-container {
+.data-vis-wrapper, .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
@@ -246,20 +306,26 @@ input[type="text"], input[type="number"] {
   margin: 1rem;
 }
 
-.google-btn {
-  width: 184px;
+.modal-event-link {
+  width: 60%;
   height: 42px;
   margin: 1rem;
   background-color: #4285f4;
-  border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  text-decoration: inherit;
+  color: #F0F4EF;
+  /* font-weight: bold; */
+  border: 1px solid #F0F4EF;
+  border-radius: 4px;
+  padding: 10px 20px;
+  text-align: center;
 }
 
-.google-btn:hover {
+.modal-event-link:hover {
   box-shadow: 0 0 6px #4285f4;
 }
 
-.google-btn:active {
+.modal-event-link:active {
   background: #1669f2;
 }
 
@@ -290,14 +356,9 @@ input[type="text"], input[type="number"] {
   font-family: "Roboto";
 }
 
-@media only screen and (min-width: 992px) {
-  .data-vis-wrapper {
-    flex-direction: row;
-  }
-  .data-vis-wrapper .recharts-responsive-container {
-    flex-basis: 50%;
-    max-width: 50%;
-    min-width: auto;
-    margin: 0 auto;
+@media only screen and (max-width: 576px) {
+  .grid-container {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
