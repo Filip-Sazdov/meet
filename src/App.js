@@ -82,9 +82,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<p className={"main-heading"}>Meet App</p>
 				<WarningAlert text={this.state.warningText} />
-				<h1>Meet App</h1>
-				<h4>Choose your nearest city</h4>
+
+				<h2 style={{ fontWeight: 400, margin: 0 }}>Choose your nearest city</h2>
 				<CitySearch
 					locations={this.state.locations}
 					updateEvents={this.updateEvents}
@@ -96,27 +97,31 @@ class App extends Component {
 					updateEvents={this.updateEvents}
 					updateEventCount={this.updateEventCount}
 				/>
-				<h4>Events in each city</h4>
-				<div className="data-vis-wrapper">
-					<EventGenre events={this.state.events} />
-					<ResponsiveContainer height={400}>
-						<ScatterChart
-							margin={{
-								top: 20,
-								right: 20,
-								bottom: 20,
-								left: 20,
-							}}
-						>
-							<CartesianGrid />
-							<XAxis type="category" dataKey="city" name="city" />
-							<YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
-							<Tooltip cursor={{ strokeDasharray: "3 3" }} />
-							<Scatter data={this.getData()} fill="#8884d8" />
-						</ScatterChart>
-					</ResponsiveContainer>
+				<h4 style={{ fontWeight: 400 }}>Events in each city</h4>
+				<div className="grid-container">
+					<div className="data-vis-wrapper">
+						<EventGenre events={this.state.events} />
+						<ResponsiveContainer height={400}>
+							<ScatterChart
+								margin={{
+									top: 20,
+									right: 20,
+									bottom: 20,
+									// left: 20,
+								}}
+							>
+								<CartesianGrid />
+								<XAxis type="category" dataKey="city" name="city" />
+								<YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+								<Tooltip cursor={{ strokeDasharray: "3 3" }} />
+								<Scatter data={this.getData()} fill="#8884d8" />
+							</ScatterChart>
+						</ResponsiveContainer>
+					</div>
+					<div className="list-wrapper">
+						<EventList events={this.state.events} />
+					</div>
 				</div>
-				<EventList events={this.state.events} />
 			</div>
 		);
 	}
