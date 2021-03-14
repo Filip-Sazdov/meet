@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Modal from "./Modal";
 
+import { MapPin } from "react-feather";
+
 class Event extends Component {
 	state = {
 		toggleDetails: false,
@@ -21,9 +23,14 @@ class Event extends Component {
 
 		return (
 			<div className="event">
-				<h3 className="event-title">{event.summary}</h3>
-				<p className="event-start">{readableDateTime}</p>
-				<p className="event-location">Location: {event.location}</p>
+				<div className="event-text-section">
+					<h4 className="event-title">{event.summary}</h4>
+					<p className="event-start">{readableDateTime}</p>
+					<div className="location-container">
+						<MapPin style={{ color: "rgb(216, 213, 213)" }} /> <p className="event-location">{event.location}</p>
+					</div>
+				</div>
+				<hr style={{ border: "0.5px solid #30333A", borderRadius: "5px", width: "90%", margin: 0 }} />
 				<button className="toggle-details" onClick={() => this.handleToggleDetails()}>
 					{!this.state.toggleDetails ? "Show Details" : "Hide Details"}
 				</button>
