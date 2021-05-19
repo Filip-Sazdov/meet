@@ -1,12 +1,10 @@
 # meet
 ## Meet "meet", the app that helps you meet.
 
+This project is the fourth achievement from my CareerFoundry mentored online program curriculum. It is a serverless progressive web app that requires authentication from the user via Google and works offline with cached data. The technologies I used are the React library, the Recharts Data Visualisation library, Google Calendar API, testing libraries such as Jest-Cucumber, Puppeteer and Enzyme and a whole lot of CSS3. The purpose of the app is to demonstrate my abilites in using advanced Web Development techniques and technologies.
+
 ### Screenshot
 ![image](https://user-images.githubusercontent.com/45643632/118409676-a87c6000-b659-11eb-9c26-b62970797bb5.png)
-
-This is a serverless, progressive web application (PWA) built with React using a
-test-driven development (TDD) technique. The application uses the Google
-Calendar API to fetch upcoming events.
 
 ### FEATURE 1: FILTER EVENTS BY CITY
 #### User story: As a user, I should be able to “filter events by city” so that I can see the list of events that take place in that city.
